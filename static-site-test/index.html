@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Meet App Auth Test</title>
+  </head>
+  <body>
+    <h1>Test getAuthURL</h1>
+    <button id="auth-btn">Get Auth URL</button>
+    <p id="output"></p>
+
+    <script>
+      document.getElementById("auth-btn").addEventListener("click", () => {
+        fetch(
+          "https://5ip6bjx6hl.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url"
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("Auth URL:", data.authUrl);
+            document.getElementById("output").innerHTML =
+              `<a href="${data.authUrl}" target="_blank">${data.authUrl}</a>`;
+          })
+          .catch((error) => {
+            console.error("Error fetching auth URL:", error);
+          });
+      });
+    </script>
+  </body>
+</html>
