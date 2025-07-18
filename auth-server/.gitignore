@@ -4,6 +4,10 @@ jspm_packages
 
 # Serverless directories
 .serverless
+.serverless/
+serverless-state.json
 
 # Secrets
 config.json
+
+*.zip

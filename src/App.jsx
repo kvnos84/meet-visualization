@@ -92,8 +92,12 @@ function App() {
       <EventList events={events} />
 
       <div className="charts-container">
-        <CityEventsChart data={cityEventData} />
-        <EventGenresChart data={getGenreData(events)} />
+        <div className="city-chart-wrapper">
+          <CityEventsChart data={cityEventData} />
+        </div>
+        <div className="genre-chart-wrapper">
+          <EventGenresChart data={getGenreData(events)} />
+        </div>
       </div>
     </div>
   );
